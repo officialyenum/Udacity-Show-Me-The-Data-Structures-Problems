@@ -138,21 +138,6 @@ def huffman_decoding(data,tree):
 
     if tree_top == []:
         return decoded_string
-        
-    # for bit in data:
-    #     if bit == '1':
-    #         tree = tree.right   
-    #     elif bit == '0':
-    #         tree = tree.left
-    #     try:
-    #         if tree.left.character == None and tree.right.character == None:
-    #             pass
-    #     except AttributeError:
-    #         decoded_output.append(tree.character)
-    #         tree = tree_top
-        
-    # string = ''.join([str(item) for item in decoded_output])
-    # return string
 
     for item in data:
         if item == "0":
@@ -183,7 +168,7 @@ if __name__ == "__main__":
     decoded_data = huffman_decoding(encoded_data, tree)
 
     print ("The size of the decoded data is: {}\n".format(sys.getsizeof(decoded_data)))
-    print ("The content of the encoded data is: {}\n".format(decoded_data))
+    print ("The content of the encoded data is: {}\n".format(decoded_data)) # Tbstwoheird 
 
     # Test case 2
     a_great_sentence = ""
@@ -199,10 +184,10 @@ if __name__ == "__main__":
     decoded_data = huffman_decoding(encoded_data, tree)
 
     print ("The size of the decoded data is: {}\n".format(sys.getsizeof(decoded_data)))
-    print ("The content of the encoded data is: {}\n".format(decoded_data))
+    print ("The content of the encoded data is: {}\n".format(decoded_data)) #
 
     # Test case 3
-    a_great_sentence = "The size of the decoded data is The bird"
+    a_great_sentence = "AAAAABBBBB"
 
     print ("The size of the data is: {}\n".format(sys.getsizeof(a_great_sentence)))
     print ("The content of the data is: {}\n".format(a_great_sentence))
@@ -215,4 +200,4 @@ if __name__ == "__main__":
     decoded_data = huffman_decoding(encoded_data, tree)
 
     print ("The size of the decoded data is: {}\n".format(sys.getsizeof(decoded_data)))
-    print ("The content of the encoded data is: {}\n".format(decoded_data))
+    print ("The content of the encoded data is: {}\n".format(decoded_data)) # AB

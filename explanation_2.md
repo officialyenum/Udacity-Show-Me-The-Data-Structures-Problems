@@ -10,19 +10,19 @@ Get Time Taken to run using : time python <filename>
 
 Because this problem requires me to search for files from a list of directories. my solution uses the 0(n) complexity to search through the directory and return matching files
 
-- TASK 2 :
+- TASK 2 : 0(n log n)
 
   - Algorithm for Find files Function :
 
     - get list of directories in path.0(n)
     - get list of files with suffix, within directory. 0(n)
-    - Return the retrieved files
+    - Return the retrieved files 0(1)
 
   - Algorithm For get_directories Function :
 
     - Traverse through list directory 0(n).
-      - Return empty list if no directory found.
-    - Return the retrieved directory list
+      - Return empty list if no directory found. 0(1)
+    - Return the retrieved directory list 0(1)
 
   - Algorithm For get_files_with_suffix Function :
     - Sorted list of directory 0(n log n)

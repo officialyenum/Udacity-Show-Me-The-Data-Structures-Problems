@@ -10,7 +10,7 @@ Get Time Taken to run using : time python <filename>
 
 Because this problem requires me to keep track of what is at the top and bottom of the list and get sorted per function call to enable retrieval use a 0(1) complexity when deleting the least recently used cache data -
 
-- TASK 1 :
+- TASK 1 : 0(1)
 
   - Algorithm for LRU_CACHE :
 
@@ -26,14 +26,14 @@ Because this problem requires me to keep track of what is at the top and bottom 
 
   - Algorithm For LRU_CACHE get Function :
 
-    - Retrieve item from nodes list using provided key.
-      - Return -1 if nonexistent.
+    - Retrieve item from nodes list using provided key. 0(1)
+      - Return -1 if nonexistent. 0(1)
     - move the retrieved node to the front of the list
-    - Return the retrieved node data Mapped value
+    - Return the retrieved node data Mapped value 0(1)
 
   - Algorithm For LRU_CACHE set Function :
     - Initialize class variables
-    - Retrieve item from nodes list using provided key.
-      - Return -1 if nonexistent.
-    - move the retrieved node to the front of the list
-    - Return the retrieved node data Mapped value
+    - Retrieve item from nodes list using provided key. 0(1)
+      - Return -1 if nonexistent. 0(1)
+    - move the retrieved node to the front of the list 0(1)
+    - Return the retrieved node data Mapped value 0(1)

@@ -10,7 +10,7 @@ Get Time Taken to run using : time python <filename>
 
 This problem requires me to check if a user exists in a list of users from a group class. my solution uses the 0(1) complexity to append object to the linked list tail and 0(n) traverse through the nodes linked list to return list of blockchain hash
 
-- TASK 5 :
+- TASK 5 : 0(n)
 
   - Algorithm for BlockLinkedList append Function :
 

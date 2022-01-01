@@ -43,26 +43,35 @@ def find_files(suffix, path):
 def get_directories(path):
   # declare empty directory list
   directories = list()
-  # set recursive breakpoint if list of directory length is 0 return empty list
-  if len(os.listdir(path)) == 0:
+  if path == '':
     return []
-  # traverse list of directory
-  for file in os.listdir(path):
-      # is current file or path a directory
-      if os.path.isdir(file) or os.path.isdir(os.path.join(path, file)):
-        # get list of data in current directory
-        new_directories = get_directories(os.path.join(path, file))
-        # join new directories list with old
-        directories += new_directories
-      else:
-        # append current path to directory
-        directories.append(os.path.join(path, file))
-  # return list of directories
-  return directories
+  try:
+    # set recursive breakpoint if list of directory length is 0 return empty list
+    if len(os.listdir(path)) == 0:
+      return []
+    # traverse list of directory
+    for file in os.listdir(path):
+        # is current file or path a directory
+        if os.path.isdir(file) or os.path.isdir(os.path.join(path, file)):
+          # get list of data in current directory
+          new_directories = get_directories(os.path.join(path, file))
+          # join new directories list with old
+          directories += new_directories
+        else:
+          # append current path to directory
+          directories.append(os.path.join(path, file))
+    # return list of directories
+    return directories
+  except OSError as e:
+    # empty list if file not found error or any os error occurs
+    return []
+  
 
 def get_files_with_suffix(suffix, directories):
   # declare empty file list
   files = list()
+  if suffix == '':
+    return files
   # traverse through sorted directory 
   for file in sorted(directories):
     if file.endswith(suffix):
@@ -76,11 +85,19 @@ suffix = ".c"
 path = "."
 
 data = find_files(suffix,path)
-print(data)
+print(data) # returns ['./testdir/subdir1/a.c', './testdir/subdir3/subsubdir1/b.c', './testdir/subdir5/a.c', './testdir/t1.c']
 
 # test case 2
-suffix = ".h"
-path = "."
+suffix = ".c"
+path = ""
 
 data = find_files(suffix,path)
-print(data)
+print(data)  # returns empty list because path is not given
+
+
+# test case 3
+suffix = ".h"
+path = "./hhth"
+
+data = find_files(suffix,path)
+print(data) # returns empty list because path does not exist

@@ -77,7 +77,11 @@ class LRU_Cache():
         # Initialize class variables
         self.list = DoublyLinkedList()
         self.nodes = {} # dictionary
-        self.capacity = capacity
+        # MAKE CAPACITY 5 IF NEGATIVE NUMBER OR ZERO IS PASSED
+        if capacity < 1:
+            self.capacity = 5
+        else:
+            self.capacity = capacity
 
     def get(self, key):
         # Retrieve item from nodes list using provided key.  
@@ -127,7 +131,7 @@ def test_function(case):
         print("Fail : returns {}".format(data))
     pass
 
-our_cache = LRU_Cache(5)
+our_cache = LRU_Cache(3)
 our_cache.set(1, 1)
 our_cache.set(2, 2)
 our_cache.set(3, 3)
@@ -145,6 +149,50 @@ our_cache.set(7, None)
 test_function([our_cache,3, -1])  # returns -1 because the cache reached it's capacity and 3 was the least recently used entry
 
 test_function([our_cache,7, None])  # returns None
+
+
+# Test Case 2
+our_cache2 = LRU_Cache(0)
+
+our_cache2.set(1, 1)
+our_cache2.set(2, 2)
+our_cache2.set(3, 3)
+our_cache2.set(4, 4)
+
+
+test_function([our_cache2, 1, 1])       # returns 1
+test_function([our_cache2,2, 2])       # returns 2
+test_function([our_cache2,9, -1])       # returns -1 because 9 is not present in the cache
+
+our_cache2.set(5, 5) 
+our_cache2.set(6, 6)
+our_cache2.set(7, None)
+
+test_function([our_cache2,3, -1])  # returns -1 because the cache reached it's capacity and 3 was the least recently used entry
+
+test_function([our_cache2,7, None])  # returns None
+
+
+our_cache3 = LRU_Cache(-1)
+
+# Test Case 3
+
+our_cache3.set(1, 1)
+our_cache3.set(2, 2)
+our_cache3.set(3, 3)
+our_cache3.set(4, 4)
+
+test_function([our_cache3, 1, 1])       # returns 1
+test_function([our_cache3,2, 2])       # returns 2
+test_function([our_cache3,9, -1])       # returns -1 because 9 is not present in the cache
+
+our_cache3.set(5, 5) 
+our_cache3.set(6, 6)
+our_cache3.set(7, None)
+
+test_function([our_cache3,3, -1])  # returns -1 because the cache reached it's capacity and 3 was the least recently used entry
+
+test_function([our_cache3,7, None])  # returns None
 
 
 

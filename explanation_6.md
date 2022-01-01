@@ -10,7 +10,7 @@ Get Time Taken to run using : time python <filename>
 
 This problem requires me to check the union or intersection between two linked list.
 
-- TASK 6 :
+- TASK 6 : 0(nk)
 
   - Algorithm for isPresent Function :
 
@@ -20,7 +20,7 @@ This problem requires me to check the union or intersection between two linked l
 
   - Algorithm for union Function :
 
-    - Traverse through first linked and second linked list and append to result linked list 0(2n)
+    - Traverse through first linked and second linked list and append to result linked list 0(nk)
     - Return the out_list 0(1)
 
   - Algorithm for intersection Function :

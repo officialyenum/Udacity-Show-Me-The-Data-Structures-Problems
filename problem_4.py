@@ -47,5 +47,15 @@ def is_user_in_group(user, group):
             return True
     return False
 
+
+# Test Case 1
+print(is_user_in_group("",sub_child))
+# returns False
+
+# Test Case 2
 print(is_user_in_group("sub_child_user",sub_child))
-print(is_user_in_group("child",sub_child))
+# returns True
+
+# Test Case 3
+print(is_user_in_group("child_not_in_group",sub_child))
+# returns False
