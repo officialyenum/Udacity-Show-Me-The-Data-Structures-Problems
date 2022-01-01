@@ -8,7 +8,9 @@ Get Time Taken to run using : time python <filename>
 
 - Why i used Tree data structure to solve this problem ?
 
-This problem requires me to encode characters into binary and decode it back into characters. my solution uses the 0(log n) complexity to search through the directory and return matching files
+This problem requires me to encode characters into binary and decode it back into characters. 
+
+This binaries will be represented in a tree like data structure where the left child node will be 0 and right child node will be 1
 
 The tree data structure helps me keep track of the binary children of every parent node
 
@@ -31,5 +33,5 @@ The tree data structure helps me keep track of the binary children of every pare
     - Start traversing the Huffman tree from the root.
     - If the current bit of encoded data is 0, move to the left child, else move to the right child of the tree if the current bit is 1.
     - If a leaf node is encountered, append the (alphabetical) character of the leaf node to the decoded string.
-    - Repeat steps #2 and #3 until the encoded data is completely traversed.
+    - Repeat until the encoded data is completely traversed.
     

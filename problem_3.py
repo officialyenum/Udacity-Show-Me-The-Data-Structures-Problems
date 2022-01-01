@@ -100,6 +100,8 @@ def generate_encoded_data(node, old_bit=''):
     return codes
 
 def huffman_encoding(data):
+    if data == '':
+        return '0', []
     codes = get_char_and_frequency(data)
     node_list = list()
     for item in codes:
@@ -131,21 +133,76 @@ def huffman_decoding(data,tree):
     Repeat steps #2 and #3 until the encoded data is completely traversed.
     '''
     tree_top = tree
+    decoded_output = []
     decoded_string = ''
+
+    if tree_top == []:
+        return decoded_string
+        
+    # for bit in data:
+    #     if bit == '1':
+    #         tree = tree.right   
+    #     elif bit == '0':
+    #         tree = tree.left
+    #     try:
+    #         if tree.left.character == None and tree.right.character == None:
+    #             pass
+    #     except AttributeError:
+    #         decoded_output.append(tree.character)
+    #         tree = tree_top
+        
+    # string = ''.join([str(item) for item in decoded_output])
+    # return string
+
     for item in data:
         if item == "0":
-            tree_top = tree_top.left
+            tree = tree.left
         else:
-            tree_top = tree_top.right
-        if tree_top.left == None and tree_top.right == None:
-            decoded_string += tree_top.character
-            tree_top = tree
+            tree = tree.right
+        if tree.left == None and tree.right == None:
+            # append character
+            decoded_string += tree.character
+            # reset tree to top
+            tree = tree_top
     return decoded_string
 
 if __name__ == "__main__":
     codes = {}
 
+    # Test case 1
     a_great_sentence = "The bird is the word"
+
+    print ("The size of the data is: {}\n".format(sys.getsizeof(a_great_sentence)))
+    print ("The content of the data is: {}\n".format(a_great_sentence))
+
+    encoded_data, tree = huffman_encoding(a_great_sentence)
+
+    print ("The size of the encoded data is: {}\n".format(sys.getsizeof(int(encoded_data, base=2))))
+    print ("The content of the encoded data is: {}\n".format(encoded_data))
+
+    decoded_data = huffman_decoding(encoded_data, tree)
+
+    print ("The size of the decoded data is: {}\n".format(sys.getsizeof(decoded_data)))
+    print ("The content of the encoded data is: {}\n".format(decoded_data))
+
+    # Test case 2
+    a_great_sentence = ""
+
+    print ("The size of the data is: {}\n".format(sys.getsizeof(a_great_sentence)))
+    print ("The content of the data is: {}\n".format(a_great_sentence))
+
+    encoded_data, tree = huffman_encoding(a_great_sentence)
+
+    print ("The size of the encoded data is: {}\n".format(sys.getsizeof(int(encoded_data, base=2))))
+    print ("The content of the encoded data is: {}\n".format(encoded_data))
+
+    decoded_data = huffman_decoding(encoded_data, tree)
+
+    print ("The size of the decoded data is: {}\n".format(sys.getsizeof(decoded_data)))
+    print ("The content of the encoded data is: {}\n".format(decoded_data))
+
+    # Test case 3
+    a_great_sentence = "The size of the decoded data is The bird"
 
     print ("The size of the data is: {}\n".format(sys.getsizeof(a_great_sentence)))
     print ("The content of the data is: {}\n".format(a_great_sentence))
