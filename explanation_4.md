@@ -12,10 +12,12 @@ This problem requires me to check if a user exists in a list of users from a gro
 
 - TASK 4 : 0(n)
   - Space Complexities 
-    user = 0(1)
-    users = 0(n)
-    group = 0(1)
-    groups = 0(n)
+    create group = 0(1)
+    add user = 0(1)
+    add group = 0(1)
+    get users = 0(n)
+    get groups = 0(n)
+    get group name = 0(1)
 
   - Algorithm for is_user_in_group Function :
 

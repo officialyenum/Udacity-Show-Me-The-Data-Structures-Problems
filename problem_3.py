@@ -137,7 +137,6 @@ def huffman_decoding(data,tree):
     Repeat steps #2 and #3 until the encoded data is completely traversed.
     '''
     tree_top = tree
-    decoded_output = []
     decoded_string = ''
 
     if tree_top == []:

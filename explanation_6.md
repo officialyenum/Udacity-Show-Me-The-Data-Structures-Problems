@@ -26,9 +26,9 @@ This problem requires me to check the union or intersection between two linked l
 
   - Algorithm for union Function :
 
-    - Traverse through first linked and second linked list and append to result linked list 0(nk)
+    - Traverse through first linked and second linked list and append to result linked list 0(n + k)
     - Return the out_list 0(1)
 
   - Algorithm for intersection Function :
-    - Traverse through first linked list and append to result linked list 0(n)
+    - Traverse through first linked list and append to result linked list if value is in second linked list 0(n * k)
     - Return the out_list 0(1)

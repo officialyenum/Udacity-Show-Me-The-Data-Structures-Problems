@@ -19,6 +19,7 @@ The tree data structure helps me keep track of the binary children of every pare
   - Space Complexities 
 
     - char and frequency dictionary = 0(n)
+    - create new node = 0(1)
     - list of nodes = 0(n)
     - encoded data = 0(n)
     - decoded data = 0(n)

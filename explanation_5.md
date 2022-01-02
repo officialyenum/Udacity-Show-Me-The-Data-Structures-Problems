@@ -13,6 +13,7 @@ This problem requires me to check if a user exists in a list of users from a gro
 - TASK 5 : 0(n)
   - Space Complexities 
     block = 0(1)
+    calculate hash = 0(1)
     block linked list = 0(n)
     timestamp list = 0(n)
     hash list = 0(n)

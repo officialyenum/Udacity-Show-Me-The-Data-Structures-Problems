@@ -15,7 +15,7 @@ Because this problem requires me to search for files from a list of directories.
   - Space Complexities 
     - directories = 0(n)
     - files = 0(n)
-    - retrieved files = 0(n)
+    - retrieved files = 0(1)
 
   - Algorithm for Find files Function :
 
