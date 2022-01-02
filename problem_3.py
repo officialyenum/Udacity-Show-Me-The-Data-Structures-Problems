@@ -115,12 +115,16 @@ def huffman_encoding(data):
         node_list.remove(left_node)
         node_list.remove(right_node)
         node_list.append(new_node)
+    if len(node_list) > 1 :
+        encoding_data = generate_encoded_data(node_list[0])
+    else:
+        encoding_data = generate_encoded_data(node_list[0], '1')
     
-    encoding_data = generate_encoded_data(node_list[0])
     output_list = []
     for item in codes:
         output_list.append(encoding_data[item])
     output_string = ''.join([str(item) for item in output_list])
+    
     return output_string, node_list[0]
     
 def huffman_decoding(data,tree):
@@ -138,7 +142,10 @@ def huffman_decoding(data,tree):
 
     if tree_top == []:
         return decoded_string
-
+    
+    if len(data) <= 1 :
+        return tree.character
+    
     for item in data:
         if item == "0":
             tree = tree.left
@@ -187,7 +194,7 @@ if __name__ == "__main__":
     print ("The content of the encoded data is: {}\n".format(decoded_data)) #
 
     # Test case 3
-    a_great_sentence = "AAAAABBBBB"
+    a_great_sentence = "AAAAA"
 
     print ("The size of the data is: {}\n".format(sys.getsizeof(a_great_sentence)))
     print ("The content of the data is: {}\n".format(a_great_sentence))

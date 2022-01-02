@@ -14,7 +14,7 @@ This binaries will be represented in a tree like data structure where the left c
 
 The tree data structure helps me keep track of the binary children of every parent node
 
-- TASK 3 : 0(n log n)
+- TASK 3 : 0(n log n) 
 
   - Algorithm for huffman_encoding Function :
     
