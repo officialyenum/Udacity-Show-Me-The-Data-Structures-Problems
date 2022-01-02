@@ -14,10 +14,16 @@ This binaries will be represented in a tree like data structure where the left c
 
 The tree data structure helps me keep track of the binary children of every parent node
 
-- TASK 3 : 0(n log n) 
+- TASK 3 : Worst Case : 0(n log n) 
+  
+  - Space Complexities 
+
+    - char and frequency dictionary = 0(n)
+    - list of nodes = 0(n)
+    - encoded data = 0(n)
+    - decoded data = 0(n)
 
   - Algorithm for huffman_encoding Function :
-    
     - get char and frequency dictionary data 0(n)
     - Traverse the data and append to list of nodes 0(n)
     - pop out the last two nodes and remove it from the list and append a single new node to that list 0(log n)

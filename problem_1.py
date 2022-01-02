@@ -131,12 +131,16 @@ def test_function(case):
         print("Fail : returns {}".format(data))
     pass
 
+
+
+
+# Test Case 1
+
 our_cache = LRU_Cache(3)
 our_cache.set(1, 1)
 our_cache.set(2, 2)
 our_cache.set(3, 3)
 our_cache.set(4, 4)
-
 
 test_function([our_cache, 1, 1])       # returns 1
 test_function([our_cache,2, 2])       # returns 2

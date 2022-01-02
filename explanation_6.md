@@ -12,6 +12,12 @@ This problem requires me to check the union or intersection between two linked l
 
 - TASK 6 : 0(nk)
 
+  - Space Complexities 
+      linkedlist 1 = 0(n)
+      linkedlist 2 = 0(k)
+      union list = 0(n + k)
+      intersection list = 0(n * k)
+
   - Algorithm for isPresent Function :
 
     - Traverse through linked list 0(n)
