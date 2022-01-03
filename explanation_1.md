@@ -10,7 +10,7 @@ Get Time Taken to run using : time python <filename>
 
 Because this problem requires me to keep track of what is at the top and bottom of the list and get sorted per function call to enable retrieval use a 0(1) complexity when deleting the least recently used cache data -
 
-- TASK 1 : Worst Case : 0(1)
+- TASK 1 : 0(n)
 
   - Space Complexities
 

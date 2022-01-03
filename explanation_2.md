@@ -10,7 +10,7 @@ Get Time Taken to run using : time python <filename>
 
 Because this problem requires me to search for files from a list of directories. my solution uses the 0(n) complexity to search through the directory and return matching files
 
-- TASK 2 : 0(n log n)
+- TASK 2 : 0(n)
 
   - Space Complexities 
     - directories = 0(n)
